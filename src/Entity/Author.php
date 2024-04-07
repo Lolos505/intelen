@@ -34,9 +34,10 @@ class Author
     private $yearOfBirth;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Country::class)
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
      */
-    private $countryOfBirth;
+    private $country;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -99,14 +100,14 @@ class Author
         return $this;
     }
 
-    public function getCountryOfBirth(): ?string
+    public function getCountry(): ?Country
     {
-        return $this->countryOfBirth;
+        return $this->country;
     }
 
-    public function setCountryOfBirth(string $countryOfBirth): self
+    public function setCountry(Country $country = null): self
     {
-        $this->countryOfBirth = $countryOfBirth;
+        $this->country = $country;
 
         return $this;
     }

@@ -28,7 +28,7 @@ class AuthorRepository extends ServiceEntityRepository
     public function findByCountry(string $countryName): array
     {
         return $this->createQueryBuilder('a')
-            ->innerJoin('a.countryOfBirth', 'c')
+            ->innerJoin('a.country', 'c')
             ->where('c.name = :countryName')
             ->setParameter('countryName', $countryName)
             ->getQuery()

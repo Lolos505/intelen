@@ -49,7 +49,7 @@ class AuthorControllerTest extends WebTestCase
             'author[firstName]' => 'Testing',
             'author[lastName]' => 'Testing',
             'author[yearOfBirth]' => 'Testing',
-            'author[countryOfBirth]' => 'Testing',
+            'author[country]' => 'Testing',
             'author[telephone]' => 'Testing',
             'author[email]' => 'Testing',
         ]);
@@ -66,7 +66,7 @@ class AuthorControllerTest extends WebTestCase
         $fixture->setFirstName('My Title');
         $fixture->setLastName('My Title');
         $fixture->setYearOfBirth('My Title');
-        $fixture->setCountryOfBirth('My Title');
+        $fixture->setCountry(null);
         $fixture->setTelephone('My Title');
         $fixture->setEmail('My Title');
 
@@ -88,7 +88,7 @@ class AuthorControllerTest extends WebTestCase
         $fixture->setFirstName('My Title');
         $fixture->setLastName('My Title');
         $fixture->setYearOfBirth('My Title');
-        $fixture->setCountryOfBirth('My Title');
+        $fixture->setCountry(null);
         $fixture->setTelephone('My Title');
         $fixture->setEmail('My Title');
 
@@ -101,7 +101,7 @@ class AuthorControllerTest extends WebTestCase
             'author[firstName]' => 'Something New',
             'author[lastName]' => 'Something New',
             'author[yearOfBirth]' => 'Something New',
-            'author[countryOfBirth]' => 'Something New',
+            'author[country]' => 'Something New',
             'author[telephone]' => 'Something New',
             'author[email]' => 'Something New',
         ]);
@@ -113,7 +113,7 @@ class AuthorControllerTest extends WebTestCase
         self::assertSame('Something New', $fixture[0]->getFirstName());
         self::assertSame('Something New', $fixture[0]->getLastName());
         self::assertSame('Something New', $fixture[0]->getYearOfBirth());
-        self::assertSame('Something New', $fixture[0]->getCountryOfBirth());
+        self::assertSame('Something New', $fixture[0]->getCountry());
         self::assertSame('Something New', $fixture[0]->getTelephone());
         self::assertSame('Something New', $fixture[0]->getEmail());
     }
@@ -128,7 +128,7 @@ class AuthorControllerTest extends WebTestCase
         $fixture->setFirstName('My Title');
         $fixture->setLastName('My Title');
         $fixture->setYearOfBirth('My Title');
-        $fixture->setCountryOfBirth('My Title');
+        $fixture->setCountry(null);
         $fixture->setTelephone('My Title');
         $fixture->setEmail('My Title');
 
