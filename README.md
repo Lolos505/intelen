@@ -11,7 +11,7 @@ Dependencies:
 
 Installing:
 
-- git clone (https://github.com/Lolos505/intelen)
+- git clone the project
 - cd intelen
 - composer install
 
