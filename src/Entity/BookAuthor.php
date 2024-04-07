@@ -10,18 +10,28 @@ use Doctrine\ORM\Mapping as ORM;
 class BookAuthor
 {
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Book", inversedBy="bookAuthors")
-     * @ORM\JoinColumn(name="book_id", referencedColumnName="id", nullable=false)
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Book", inversedBy="bookAuthors")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $book;
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Author", inversedBy="bookAuthors")
-     * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="bookAuthors")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getBook(): ?Book
     {
